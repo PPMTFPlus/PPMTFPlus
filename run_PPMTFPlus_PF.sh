@@ -12,7 +12,7 @@ python3 SampleParamA.py PF TK
 cd ../
 ./SynData_PPMTF PF TK 10 SmplA1 200
 cd ../python/
-python3 EvalUtilPriv_Train.py PF TK PPMTF 10 SmplA1
-#python3 EvalUtilPriv_Train.py PF TK PPMTF 10 A
-#python3 EvalUtilPriv_Train.py PF TK SGD 10
-#python3 EvalUtilPriv_Train.py PF TK SGLT 10
+python3 EvalUtilPriv.py PF TK PPMTF 10 SmplA1
+#python3 EvalUtilPriv.py PF TK PPMTF 10 A
+#python3 EvalUtilPriv.py PF TK SGD 10
+#python3 EvalUtilPriv.py PF TK SGLT 10
