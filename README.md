@@ -42,18 +42,19 @@ You can easily build and run our code using Docker files as follows.
 $ git clone https://github.com/PPMTFPlus/PPMTFPlus
 ```
 
-3. Build a docker image.
+3. Build a docker image and start.
 ```
 $ cd PPMTFPlus
-$ docker-compose up -d --build
+$ docker compose build
+$ docker-compose up -d 
 ```
 
 4. Attach to the docker container.
 ```
-$ docker-compose exec ppmtfplus bash
+$ docker compose exec ppmtfplus bash --login
 ```
 
-PPMTF repository is cloned in /opt folder. Files can be shared between a host system and the docker container by putting the files in /share folder.
+PPMTFPlus repository is cloned in /opt folder. Files can be shared between a host system and the docker container by putting the files in /share folder.
 
 5. Run our code (NOTE: it may take one hour or so depending on the running environment).
 ```
@@ -94,7 +95,7 @@ Run the following commands.
 
 ```
 $ cd python/
-$ python3 Read_PF.py ../data/PF_dataset TK
+$ python3.10 Read_PF.py ../data/PF_dataset TK
 $ cd ../
 ```
 
@@ -106,13 +107,13 @@ Run the following commands.
 
 ```
 $ cd python/
-$ python3 MakeTrainTestData_PF.py TK
-$ python3 MakeTrainTensor.py PF TK
+$ python3.10 MakeTrainTestData_PF.py TK
+$ python3.10 MakeTrainTensor.py PF TK
 $ cd ../cpp/
 $ ./PPMTF PF TK 200
 (To change the alpha paramter from 200 to [alpha], run "./PPMTF PF TK [alpha]".)
 $ cd ../python/
-$ python3 SampleParamA.py PF TK
+$ python3.10 SampleParamA.py PF TK
 $ cd ../
 ```
 
@@ -133,7 +134,7 @@ To evaluate the utility and privacy of the synthetic traces, run the following c
 
 ```
 $ cd python/
-$ python3 EvalUtilPriv.py PF TK PPMTF 10 SmplA1
+$ python3.10 EvalUtilPriv.py PF TK PPMTF 10 SmplA1
 $ cd ../
 ```
 
@@ -157,7 +158,7 @@ Run the following commands.
 
 ```
 $ cd python/
-$ python3 Read_FS.py ../data/FS_dataset/ NY
+$ python3.10 Read_FS.py ../data/FS_dataset/ NY
 $ cd ../
 ```
 
@@ -171,12 +172,12 @@ Run the following commands.
 
 ```
 $ cd python/
-$ python3 MakeTrainTestData_FS.py NY
-$ python3 MakeTrainTensor.py PF NY
+$ python3.10 MakeTrainTestData_FS.py NY
+$ python3.10 MakeTrainTensor.py PF NY
 $ cd ../cpp/
 $ ./PPMTF FS NY 200
 $ cd ../python/
-$ python3 SampleParamA.py FS NY
+$ python3.10 SampleParamA.py FS NY
 $ cd ../
 ```
 Then a generative model for teams 1 to 10 (modelparameter_Itr100_SmplA[1-10].csv) will be generated in data/FS/PPMTF_NY_alp200_mnt100_mnv100/.
@@ -195,7 +196,7 @@ Then synthesize traces (syntraces_Itr100_SmplA1.csv) in NYC will be generated in
 To evaluate the diversity of the synthetic traces, run the following command.
 
 ```
-$ python3 EvalDiversity.py FS NY SmplA 20 1000
+$ python3.10 EvalDiversity.py FS NY SmplA 20 1000
 ```
 
 Then experimental results of PPMTF+ (div_NY_SmplA_tn20_sn1000.csv) will be output in data/FS/.
@@ -203,7 +204,7 @@ Then experimental results of PPMTF+ (div_NY_SmplA_tn20_sn1000.csv) will be outpu
 To evaluate the utility and privacy of the synthetic traces, run the following command.
 
 ```
-$ python3 EvalUtilPriv.py FS NY PPMTF 20 SmplA1 100 0
+$ python3.10 EvalUtilPriv.py FS NY PPMTF 20 SmplA1 100 0
 ```
 
 Then experimental results of PPMTF+ (utilpriv_PPMTF_NY_SmplA1.csv) will be output in data/FS/.
