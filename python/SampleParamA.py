@@ -72,10 +72,10 @@ SmplA = np.zeros((SmplNum, N, K))
 # Sample model parameter A from hyper-parameters mu_A & Lam_A
 for smpl in range(SmplNum):
     for n in range(N):
-        if n % 10000 == 0:
-            print(n)
+#        if n % 10000 == 0:
+#            print(n)
         SmplA[smpl, n, :] = multivariate_normal(mu_A, inv(Lam_A))
-
+    print("Sampled new feature vectors --> SmplA" + str(smpl+1))
 # Output sampled model parameter A
 for smpl in range(SmplNum):
     outfile = ModelParameterFile + "_Itr" + str(ItrNum) + "_SmplA" + str(smpl+1) + ".csv"

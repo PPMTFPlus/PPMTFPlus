@@ -180,7 +180,7 @@ void SynTraces(mat_t& A,
   
   // For each user
   for(int n = 0; n < N; ++n){
-    if(n % 1000 == 0){printf("Synthesized traces of %d users.\n", n);}
+    if(n != 0 && n % 1000 == 0){printf("Synthesized traces of %d users.\n", n);}
     // Initialization
     mat_t time_poi_dist = mat_t::Zero(T, M);
     mat_t time_poi_dist_sum = mat_t::Zero(T, 1);
@@ -274,6 +274,8 @@ void SynTraces(mat_t& A,
       }
     }
   }
+  printf("Synthesized traces of %d users.\n", N);
+
   fclose(fp);
 }
 

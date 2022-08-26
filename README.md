@@ -63,7 +63,7 @@ $ chmod +x run_PPMTFPlus_PF.sh
 $ ./run_PPMTFPlus_PF.sh
 ```
 
-Then experimental results of PPMTF (alpha=200) in PF will be output in "data/PF/utilpriv_PPMTF_TK.csv".
+Then experimental results of PPMTF (alpha=200) in PF will be output in "data/PF/utilpriv_PPMTF_TK_SmplA1.csv".
 
 We plotted Figure 19 "PPMTF+" in our paper using this file, while changing the alpha parameter from 0.5 to 200. To see the figure, see "results/PF/utilpriv_PF.xlsx". To change the alpha parameter, see **Usage (3)**.
 
