@@ -3,9 +3,9 @@ This is a source code of PPMTF+ (Privacy-Preserving Multiple Tensor Factorizatio
 
 # Purpose
 
-The purpose of this source code is to reproduce experimental results of PPMTF+ in PF (SNS-based people flow data) and FS (Foursquare dataset). In particular, we designed our code to easily reproduce experimental results of PPMTF+ in PF (Figure 19 "PPMTF+" in our paper) using Docker files. See **Running Our Code Using Dockerfiles** for details. 
+The purpose of this source code is to reproduce experimental results of PPMTF+ in PF (SNS-based people flow data) and FS (Foursquare dataset). In particular, we designed our code to easily reproduce experimental results of PPMTF+ in PF (Figure 18 "PPMTF+" in our paper) using Docker files. See **Running Our Code Using Dockerfiles** for details. 
 
-We also designed our code to reproduce experimental results of PPMTF+ in FS (Figures 17 and 18 "PPMTF+" in our paper) by downloading the Foursquare dataset and running our code. Note that it takes a lot of time (e.g., it may take more than one day depending on the running environment) to run our code. See **Usage (4)(5)** for details.
+We also designed our code to reproduce experimental results of PPMTF+ in FS (Figures 16 and 17 "PPMTF+" in our paper) by downloading the Foursquare dataset and running our code. Note that it takes a lot of time (e.g., it may take more than one day depending on the running environment) to run our code. See **Usage (4)(5)** for details.
 
 # Directory Structure
 - cpp/			&emsp;C++ codes (put the required files under this directory; see cpp/README.md).
@@ -59,7 +59,7 @@ $ ./run_PPMTFPlus_PF.sh
 
 Then experimental results of PPMTF (alpha=200) in PF will be output in "data/PF/utilpriv_PPMTF_TK_SmplA1.csv".
 
-We plotted Figure 19 "PPMTF+" in our paper using this file, while changing the alpha parameter from 0.5 to 200. To see the figure, see "results/PF/utilpriv_PF.xlsx". To change the alpha parameter, see **Usage (3)**.
+We plotted Figure 18 "PPMTF+" in our paper using this file, while changing the alpha parameter from 0.5 to 200. To see the figure, see "results/PF/utilpriv_PF.xlsx". To change the alpha parameter, see **Usage (3)**.
 
 # Usage
 
@@ -134,7 +134,7 @@ $ cd ../
 
 Then experimental results of PPMTF (utilpriv_PPMTF_TK.csv) will be output in data/PF/.
 
-We plotted Figure 19 "PPMTF+" in our paper using this file, while changing the alpha parameter from 0.5 to 200. See "results/PF/utilpriv_PF.xlsx" for details.
+We plotted Figure 18 "PPMTF+" in our paper using this file, while changing the alpha parameter from 0.5 to 200. See "results/PF/utilpriv_PF.xlsx" for details.
 
 **(4) Download and preprocess FS**
 
@@ -205,7 +205,7 @@ Then experimental results of PPMTF+ (utilpriv_PPMTF_NY_SmplA1.csv) will be outpu
 
 Synthesized traces in other cities (IST/JK/KL/SP/TKY) can also be generated and evaluated by replacing NY with IS, JK, KL, SP, or TK.
 
-We plotted Figures 17 and 18 "PPMTF+" in our paper using these files. See "results/FS/div_FS.xlsx" and "results/FS/utilpriv_FS.xlsx" for details.
+We plotted Figures 16 and 17 "PPMTF+" in our paper using these files. See "results/FS/div_FS.xlsx" and "results/FS/utilpriv_FS.xlsx" for details.
 
 **(6) Experimental Results for Other Synthesizers**
 
