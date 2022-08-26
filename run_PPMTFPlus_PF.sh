@@ -1,5 +1,6 @@
 #!/bin/bash -x
 
+
 cd data/PF/
 tar -zxvf traces_TK.tar.gz
 cd ../../python/
@@ -9,7 +10,7 @@ cd ../cpp/
 ./PPMTF PF TK 200
 cd ../python/
 python3.10 SampleParamA.py PF TK
-cd ../
+cd ../cpp
 ./SynData_PPMTF PF TK 10 SmplA1 200
 cd ../python/
 python3.10 EvalUtilPriv.py PF TK PPMTF 10 SmplA1
