@@ -46,7 +46,7 @@ $ git clone https://github.com/PPMTFPlus/PPMTFPlus
 ```
 $ cd PPMTFPlus
 $ docker compose build
-$ docker-compose up -d 
+$ docker compose up -d 
 ```
 
 4. Attach to the docker container.
