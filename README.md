@@ -1,5 +1,9 @@
 # PPMTF+
-This is a source code of PPMTF+ (Privacy-Preserving Multiple Tensor Factorization Plus), a location synthesizer for an anonymization contest. PPMTF+ is mostly implemented with C++. Data preprocessing and evaluation are implemented with Python. This software is released under the MIT License.
+This is a source code of PPMTF+ (Privacy-Preserving Multiple Tensor Factorization Plus) in the following paper:
+
+Takao Murakami, Hiromi Arai, Koki Hamada, Takuma Hatano, Makoto Iguchi, Hiroaki Kikuchi, Atsushi Kuromasa, Hiroshi Nakagawa, Yuichi Nakamura, Kenshiro Nishiyama, Ryo Nojima, Hidenobu Oguri, Chiemi Watanabe, Akira Yamada, Takayasu Yamaguchi, Yuji Yamaoka, "Designing a Location Trace Anonymization Contest," Proceedings on Privacy Enhancing Technologies (PoPETs), Issue 1, 2023 (to appear).
+
+PPMTF+ is a location synthesizer for an anonymization contest and is mostly implemented with C++. Data preprocessing and evaluation are implemented with Python. This software is released under the MIT License.
 
 # Purpose
 
