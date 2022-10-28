@@ -7,9 +7,11 @@ PPMTF+ is a location synthesizer for an anonymization contest and is mostly impl
 
 # Purpose
 
-The purpose of this source code is to reproduce experimental results of PPMTF+ in PF (SNS-based people flow data) and FS (Foursquare dataset). In particular, we designed our code to easily reproduce experimental results of PPMTF+ in PF (Figure 18 "PPMTF+" in our paper) using Docker files. See **Running Our Code Using Dockerfiles** for details. 
+The purpose of this source code is to reproduce experimental results of PPMTF+ in PF (SNS-based people flow data) and FS (Foursquare dataset). In particular, we designed our code to easily reproduce experimental results of PPMTF+ in PF (Figure 18 "PPMTF+" in our paper) using Docker files. See **Running Our Code Using Dockerfiles** for details.
 
 We also designed our code to reproduce experimental results of PPMTF+ in FS (Figures 16 and 17 "PPMTF+" in our paper) by downloading the Foursquare dataset and running our code. Note that it takes a lot of time (e.g., it may take more than one day depending on the running environment) to run our code. See **Usage (4)(5)** for details.
+
+Note that the purpose of this code is to generate **datasets** for an anonymization contest. To obtain the contest results of our paper (e.g., Figures 8 and 9), please download the "Dataset and Sample program" and "Submitted Files by All Teams (Final Round)" (~1.0GB zipped) from [PWSCup 2019](https://www.iwsec.org/pws/2019/cup19_e.html) and see README files therein.
 
 # Directory Structure
 - cpp/			&emsp;C++ codes (put the required files under this directory; see cpp/README.md).
@@ -29,7 +31,11 @@ We also designed our code to reproduce experimental results of PPMTF+ in FS (Fig
 - README.md		&emsp;This file.
 - run_PPMTF_PF.sh	&emsp;Shell script to synthesize traces in PF using PPMTF.
 
+Instructions for installing Eigen 3.3.7, Generalized Constant Expression Math, and StatsLib are given in cpp/README.md.
+
 # Running Our Code Using Docker Files
+
+NOTE: We used a laptop with Windows 11 Enterprise, Intel i7-1185G7 (3.00GHz, 4 cores), and 32GB RAM to run our code using Docker files. It required about 200MB memory and about 15 minutes in our environment.
 
 You can easily build and run our code using Docker files as follows.
 
@@ -40,7 +46,7 @@ You can easily build and run our code using Docker files as follows.
 $ git clone https://github.com/PPMTFPlus/PPMTFPlus
 ```
 
-3. Build a docker image and start.
+3. Build a docker image and start ("docker compose" may require sudo).
 ```
 $ cd PPMTFPlus
 $ docker compose build
@@ -54,18 +60,20 @@ $ docker compose exec ppmtfplus bash --login
 
 PPMTFPlus repository is cloned in /opt folder. Files can be shared between a host system and the docker container by putting the files in /share folder.
 
-5. Run our code (NOTE: it may take one hour or so depending on the running environment).
+5. Run our code (it took about 15 minutes in our environment).
 ```
 $ cd opt/PPMTFPlus/
 $ chmod +x run_PPMTFPlus_PF.sh
 $ ./run_PPMTFPlus_PF.sh
 ```
 
-Then experimental results of PPMTF (alpha=200) in PF will be output in "data/PF/utilpriv_PPMTF_TK_SmplA1.csv".
+Then experimental results of PPMTF (alpha=200) in PF will be output in "data/PF/utilpriv_PPMTF_TK_SmplA1.csv" (note that this file is newly created after running our code).
 
 We plotted Figure 18 "PPMTF+" in our paper using this file, while changing the alpha parameter from 0.5 to 200. To see the figure, see "results/PF/utilpriv_PF.xlsx". To change the alpha parameter, see **Usage (3)**.
 
 # Usage
+
+NOTE: (1), (2), and (3) are for reproducing results in PF and can be run using Docker Files. (4) and (5) are for reproducing results in FS and are not covered by Docker Files.
 
 **(1) Install**
 
@@ -78,6 +86,21 @@ $ make
 $ cd ../
 ```
 
+Install Python 3.10.
+```
+$ wget https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tar.xz
+$ tar xJf Python-3.10.4.tar.xz
+$ cd Python-3.10.4
+$ yum install -y epel-release
+$ yum install -y openssl11 openssl11-devel
+$ export CFLAGS=$(pkg-config --cflags openssl11)
+$ export LDFLAGS=$(pkg-config --libs openssl11)
+$ ./configure
+$ make
+$ make altinstall
+$ cd ../
+```
+
 Install [POT 0.8.2](https://pythonot.github.io/index.html).
 ```
 $ cd python/
@@ -86,6 +109,8 @@ $ cd ../
 ```
 
 **(2) Download and preprocess PF**
+
+NOTE: In (2), we explain how to obtain the POI file (POI_TK.csv) and the trace file (traces_TK.csv) from the [SNS-based people flow data](https://nightley.jp/archives/1954/). The website of the SNS-based people flow data is written in Japanese, and you need to input your information (e.g., affiliation, e-mail address) to download the dataset. However, both the POI and trace files have already been included in data/PF, and (3) uses only these data. Therefore, you can skip (2), and in that case, you do not need to download the dataset.
 
 Download the [SNS-based people flow data](https://nightley.jp/archives/1954/) and place the dataset in data/PF_dataset/.
 
