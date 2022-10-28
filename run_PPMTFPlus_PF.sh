@@ -14,6 +14,3 @@ cd ../cpp
 ./SynData_PPMTF PF TK 10 SmplA1 200
 cd ../python/
 python3.10 EvalUtilPriv.py PF TK PPMTF 10 SmplA1
-#python3.10 EvalUtilPriv.py PF TK PPMTF 10 A
-#python3.10 EvalUtilPriv.py PF TK SGD 10
-#python3.10 EvalUtilPriv.py PF TK SGLT 10
