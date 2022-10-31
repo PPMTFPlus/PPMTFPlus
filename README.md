@@ -104,7 +104,7 @@ $ cd ../
 Install [POT 0.8.2](https://pythonot.github.io/index.html).
 ```
 $ cd python/
-$ pip install POT==0.8.2
+$ pip3.10 install POT==0.8.2
 $ cd ../
 ```
 
